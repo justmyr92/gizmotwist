@@ -1,0 +1,7 @@
+{
+  "name": "gizmotwist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
