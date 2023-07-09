@@ -1,0 +1,103 @@
+/** @format */
+
+ion-header {
+    box-shadow: none;
+}
+
+.main__container {
+    background-color: var(--ion-color-light);
+    height: 100%;
+
+    position: relative;
+    .scramble__container {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        height: 20vh;
+        padding: 0 1rem;
+        gap: 10px;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3.scramble__text {
+            display: block;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button__container {
+            width: 100%;
+        }
+    }
+    .timer__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+
+        .countdown {
+            font-size: 7rem;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .inspection {
+            width: 100%;
+        }
+        .timer {
+            width: 100%;
+
+            .stopwatch {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: max-content;
+                .seconds {
+                    font-size: 7rem;
+                    margin: 0;
+                    padding: 0;
+
+                    width: 45%;
+                    text-align: end;
+                    height: 100%;
+                }
+                .point {
+                    font-size: 7rem;
+                    margin: 0;
+                    padding: 0;
+
+                    text-align: center;
+                    height: 100%;
+                }
+                .milliseconds {
+                    font-size: 7rem;
+                    margin: 0;
+                    padding: 0;
+
+                    width: 45%;
+                    text-align: start;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .cube__container {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+}

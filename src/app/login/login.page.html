@@ -1,0 +1,62 @@
+<!-- @format -->
+
+<ion-content [fullscreen]="true">
+    <div class="login__container">
+        <form (ngSubmit)="login()">
+            <div class="logo__container">
+                <img src="assets/img/logo.png" alt="logo" />
+                <span>gizmotwist</span>
+            </div>
+
+            <div class="title__container">
+                <h1>Login</h1>
+            </div>
+
+            <div class="error__container" *ngIf="isIncorrect === true">
+                <ion-text color="danger">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    {{ errorMessage }}
+                </ion-text>
+            </div>
+            <div class="input__container">
+                <ion-label position="floating">Email Address</ion-label>
+                <ion-input
+                    type="email"
+                    fill="outline"
+                    id="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required></ion-input>
+            </div>
+
+            <div class="input__container">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input
+                    type="password"
+                    fill="outline"
+                    id="password"
+                    [(ngModel)]="password"
+                    name="password"
+                    placeholder="Password"
+                    required></ion-input>
+            </div>
+
+            <ion-button
+                type="submit"
+                expand="full"
+                color="primary"
+                (click)="login()">
+                Login
+            </ion-button>
+            <p class="background"><span>Doesn't have an account?</span></p>
+            <ion-button
+                type="button"
+                expand="full"
+                color="success"
+                routerLink="/signup">
+                Register
+            </ion-button>
+        </form>
+    </div>
+</ion-content>

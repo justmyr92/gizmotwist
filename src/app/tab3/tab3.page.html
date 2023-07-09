@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- @format -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <div class="main__container">
+        <div class="category__container">
+            <ion-select
+                placeholder="Select Category"
+                [(ngModel)]="selectedCategory"
+                (ionChange)="onSelectionChange()">
+                <ion-select-option value="2x2x2 Rubik's Cube">
+                    2x2x2 Rubik's Cube
+                </ion-select-option>
+                <ion-select-option value="3x3x3 Rubik's Cube" selected>
+                    3x3x3 Rubik's Cube
+                </ion-select-option>
+                <ion-select-option value="4x4x4 Rubik's Cube">
+                    4x4x4 Rubik's Cube
+                </ion-select-option>
+            </ion-select>
+        </div>
+        <div class="solve__container">
+            <ng-container *ngFor="let solve of solves.reverse()">
+                <div class="time__container">
+                    <div class="time">{{ solve.time }}</div>
+                    <div class="info">
+                        <p class="scramble">{{ solve.scramble }}</p>
+                        <p class="date">
+                            {{ solve.date | date:'MMM dd, yyyy h:mm a' }}
+                        </p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </ion-content>
