@@ -1,0 +1,45 @@
+ion-content {
+  --background: var(--ion-color-light);
+}
+.tutorial__container {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  .tutorial__content {
+    width: fit-content;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h5 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    img {
+      width: 5rem;
+    }
+  }
+}
+
+.tutorial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
+  h3 {
+    text-align: start;
+  }
+  h5 {
+    text-align: start;
+  }
+}

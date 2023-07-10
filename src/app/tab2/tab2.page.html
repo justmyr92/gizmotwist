@@ -3,39 +3,59 @@
 <ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <ion-button
-                    expand="full"
-                    (click)="setTutorial()"
-                    [disabled]="this.tutorial == 'OLL'">
-                    OLL
-                </ion-button>
-            </ion-col>
-            <ion-col>
-                <ion-button
-                    expand="full"
-                    (click)="setTutorial()"
-                    [disabled]="this.tutorial == 'PLL'">
-                    PLL
-                </ion-button>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          expand="full"
+          (click)="setTutorial()"
+          [disabled]="this.tutorial == 'OLL'"
+        >
+          OLL
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button
+          expand="full"
+          (click)="setTutorial()"
+          [disabled]="this.tutorial == 'PLL'"
+        >
+          PLL
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <ion-grid>
-        <ion-row *ngFor="let row of getRows()">
-            <ng-container *ngFor="let item of row">
-                <ion-col>
-                    <div class="tutorial__content">
-                        {{item.name}}
-                        <div class="img__container">
-                            <img src="{{item.image}}" alt="{{item.image}}" />
-                        </div>
-                    </div>
-                </ion-col>
-            </ng-container>
-        </ion-row>
-    </ion-grid>
+  <div class="tutorial__container">
+    <div class="col" *ngFor="let item of filteredTutorial">
+      <div class="tutorial__content" (click)="setOpen(true, item)">
+        <h5>{{item.name}}</h5>
+        <div class="img__container">
+          <img src="{{item.image}}" alt="{{item.image}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, 'null')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="tutorial">
+          <img src="{{item.image}}" alt="{{item.image}}" />
+
+          <div class="content">
+            <h3 class="name">{{item.name}}</h3>
+            <h5 class="algorithm">{{item.scramble}}</h5>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
