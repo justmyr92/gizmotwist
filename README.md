@@ -6,7 +6,8 @@ The team aims to design and develop a mobile application that would provide user
 ## Sustainable Development Goal 3 (SDG 3)
 Rubik’s cube contributes to Sustainable Development Goal 3 (SDG 3), which is part of the United Nations' global agenda to ensure healthy lives and promote well-being for all at all ages. It aims to address various aspects of health by promoting mental stimulation, cognitive development, hand-eye coordination, muscle memory, and photographic memory through engaging with the Rubik's Cube. Solving the cube enhances motor skills, coordination, and memory abilities, while the timer application allows users to track progress and analyze strategies for personal growth and development. By integrating these elements, the application fosters physical and mental well-being.
 
-![image](https://github.com/justmyr92/gizmotwist/assets/139058311/e29f9ffb-b96c-496b-8a8b-1aa26ce11677)
+![image](https://github.com/justmyr92/gizmotwist/assets/91595529/cd92421a-7a3f-4639-988f-45cc8c915904)
+
 
 ## Technology Stacks
 * HTML
