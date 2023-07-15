@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tab5</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab5</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="profile__container">
+      <div class="profile__image">
+        <img src="../../assets/profile.png" alt="profile pic" />
+      </div>
+      <div class="profile__info">
+        <h2>{{username}}</h2>
+      </div>
+    </div>
+    <div class="option__container">
+      <div class="option__item">
+        <ion-toggle
+          #toggle
+          (ionChange)="toggleDarkMode(toggle.checked)"
+          [checked]="darkMode"
+          justify="space-between"
+        >
+          Switch to {{theme}}
+        </ion-toggle>
+      </div>
+    </div>
+  </div>
 </ion-content>

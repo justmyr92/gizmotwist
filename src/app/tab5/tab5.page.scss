@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid black;
+  .profile__container {
+    background-color: #fff;
+    display: flex;
+    border: 1px solid black;
+    justify-content: start;
+    align-items: center;
+    padding: 15px 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .profile__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 3rem;
+      }
+    }
+    .profile__info {
+      border: 1px solid black;
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+  .option__container {
+    padding: 15px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    .option__item {
+      border: 1px solid black;
+      ion-toggle {
+        border: 1px solid black;
+        width: 100%;
+      }
+    }
+  }
+}

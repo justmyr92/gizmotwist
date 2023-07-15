@@ -8,6 +8,7 @@ export class DataService {
   public userData: any = [
     {
       userId: 10001,
+      username: 'justmyrgutierrez1',
       emailAddress: 'justmyrgutierrez1@gmail.com',
       password: '123456',
       participated: true,
@@ -34,6 +35,7 @@ export class DataService {
     },
     {
       userId: 10002,
+      username: 'raizhellannquijano',
       emailAddress: 'raizhellannquijano@gmail.com',
       password: '123456',
       participated: true,
@@ -66,9 +68,10 @@ export class DataService {
     while (this.checkUserId(userId)) {
       userId = Math.floor(Math.random() * 90000) + 10000;
     }
-
+    let username = email.split('@')[0];
     let newUser = {
       userId: userId,
+      username: username,
       emailAddress: email,
       password: password,
       participated: participated,
@@ -175,7 +178,7 @@ export class DataService {
           analytics.average /= analytics.count;
         }
 
-        break; // Exit the loop since the user has been found
+        break;
       }
     }
     return analytics;

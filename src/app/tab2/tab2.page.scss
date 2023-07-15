@@ -1,12 +1,12 @@
 ion-content {
-  --background: var(--ion-color-light);
   ion-grid {
     position: sticky;
     top: 0;
     z-index: 1;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--ion-background-color-2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 0.3px solid var(--ion-color-medium);
   }
 }
 .tutorial__container {
@@ -20,7 +20,7 @@ ion-content {
     width: calc(
       33.33% - 10px
     ); /* Adjust the width based on the number of columns */
-    background-color: #fff;
+    background-color: var(--ion-background-color-2);
     display: flex;
     justify-content: center;
     align-items: center;

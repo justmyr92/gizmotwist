@@ -7,7 +7,7 @@
       </p>
     </div>
     <div class="table-container">
-      <table class="table">
+      <table class="table" *ngIf="analytics != null">
         <thead>
           <tr>
             <th>Category</th>
@@ -17,15 +17,15 @@
         <tbody>
           <tr class="odd">
             <th>Average</th>
-            <td>{{ analytics.average }}</td>
+            <td>{{ analytics.average.toFixed(2) }}</td>
           </tr>
           <tr class="even">
             <th>Best</th>
-            <td>{{ analytics.best }}</td>
+            <td>{{ analytics.best.toFixed(2) }}</td>
           </tr>
           <tr class="odd">
             <th>Slowest</th>
-            <td>{{ analytics.slowest }}</td>
+            <td>{{ analytics.slowest.toFixed(2) }}</td>
           </tr>
           <tr class="even">
             <th>DNF</th>

@@ -20,7 +20,7 @@ export class Tab4Page implements OnInit {
   labels: any[] = [];
   solveTimes: number[] = [];
   solveDates: string[] = [];
-  analytics: any = {};
+  analytics: any = null;
 
   ngOnInit() {}
 
