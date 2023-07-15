@@ -1,5 +1,42 @@
 <ion-content [fullscreen]="true">
   <div class="analytics__container">
-    <canvas id="lineChart"></canvas>
+    <div class="chart-container">
+      <canvas id="lineChart" class="lineChart"></canvas>
+      <p class="note">
+        Note that the DNF records won't be reflected on the graph.
+      </p>
+    </div>
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <td>3x3x3 Rubik's Cube</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd">
+            <th>Average</th>
+            <td>{{ analytics.average }}</td>
+          </tr>
+          <tr class="even">
+            <th>Best</th>
+            <td>{{ analytics.best }}</td>
+          </tr>
+          <tr class="odd">
+            <th>Slowest</th>
+            <td>{{ analytics.slowest }}</td>
+          </tr>
+          <tr class="even">
+            <th>DNF</th>
+            <td>{{ analytics.dnf }}</td>
+          </tr>
+          <tr class="odd">
+            <th>Count</th>
+            <td>{{ analytics.count }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </ion-content>

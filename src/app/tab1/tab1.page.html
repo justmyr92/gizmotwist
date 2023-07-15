@@ -1,41 +1,43 @@
 <!-- @format -->
 
 <ion-content [fullscreen]="true">
-    <div class="main__container">
-        <div class="scramble__container">
-            <h3 class="scramble__text">{{scramble}}</h3>
+  <div class="main__container">
+    <div class="scramble__container">
+      <h3 class="scramble__text">{{scramble}}</h3>
 
-            <div class="button__container">
-                <ion-button
-                    (click)="generateScramble()"
-                    expand="full"
-                    class="scramble__btn">
-                    Scramble
-                </ion-button>
-            </div>
-        </div>
-
-        <div class="timer__container" (click)="handleTimerClick()">
-            <div
-                id="inspection"
-                class="inspection"
-                [style.display]="isInspectionVisible ? 'block' : 'none'">
-                <p id="countdown" class="countdown">{{inspectionTime}}</p>
-            </div>
-
-            <div
-                class="timer"
-                [style.display]="isStopwatchVisible ? 'block' : 'none'">
-                <div class="stopwatch">
-                    <span class="seconds">{{ seconds }}</span>
-                    <span class="point">.</span>
-                    <span class="milliseconds">
-                        {{ padZero(milliseconds) }}
-                    </span>
-                </div>
-            </div>
-            <p class="message">{{message}}</p>
-        </div>
-        <div class="cube__container"></div>
+      <div class="button__container">
+        <ion-button
+          size="small"
+          (click)="generateScramble()"
+          expand="full"
+          class="scramble__btn"
+        >
+          Scramble
+        </ion-button>
+      </div>
     </div>
+
+    <div class="timer__container" (click)="handleTimerClick()">
+      <div
+        id="inspection"
+        class="inspection"
+        [style.display]="isInspectionVisible ? 'block' : 'none'"
+      >
+        <p id="countdown" class="countdown">{{inspectionTime}}</p>
+      </div>
+
+      <div
+        class="timer"
+        [style.display]="isStopwatchVisible ? 'block' : 'none'"
+      >
+        <div class="stopwatch">
+          <span class="seconds">{{ seconds }}</span>
+          <span class="point">.</span>
+          <span class="milliseconds"> {{ padZero(milliseconds) }} </span>
+        </div>
+      </div>
+      <p class="message">{{message}}</p>
+    </div>
+    <div class="cube__container"></div>
+  </div>
 </ion-content>

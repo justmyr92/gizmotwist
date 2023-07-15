@@ -20,11 +20,14 @@ export class Tab4Page implements OnInit {
   labels: any[] = [];
   solveTimes: number[] = [];
   solveDates: string[] = [];
+  analytics: any = {};
 
   ngOnInit() {}
 
   ionViewWillEnter() {
     this.renderChart();
+    this.analytics = this.dataService.getAnalytics();
+    console.log(this.analytics);
   }
 
   renderChart() {
@@ -35,12 +38,14 @@ export class Tab4Page implements OnInit {
     let solvesArray = this.dataService.getSolves(Number(user));
     for (const solves of solvesArray) {
       for (const solve of solves) {
-        this.solveTimes.push(parseFloat(solve.time));
         const date = new Date(solve.date);
         const month = date.toLocaleDateString('en-US', { month: 'short' });
         const day = date.getDate();
         const formattedDate = `${month} ${day}`;
-        this.solveDates.push(formattedDate);
+        if (solve.time != 'DNF') {
+          this.solveTimes.push(parseFloat(solve.time));
+          this.solveDates.push(formattedDate);
+        }
       }
     }
     Chart.register(

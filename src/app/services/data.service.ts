@@ -144,4 +144,40 @@ export class DataService {
   logoutUser() {
     localStorage.clear();
   }
+
+  getAnalytics() {
+    let user = localStorage.getItem('userId');
+    let analytics = {
+      average: 0,
+      best: Infinity,
+      slowest: 0,
+      dnf: 0,
+      count: 0,
+    };
+
+    for (let i = 0; i < this.userData.length; i++) {
+      if (this.userData[i].userId == user) {
+        for (let j = 0; j < this.userData[i].solve.length; j++) {
+          const solve = this.userData[i].solve[j];
+          const time = parseFloat(solve.time);
+
+          if (!isNaN(time)) {
+            analytics.count++;
+            analytics.average += time;
+            analytics.best = Math.min(analytics.best, time);
+            analytics.slowest = Math.max(analytics.slowest, time);
+          } else {
+            analytics.dnf++;
+          }
+        }
+
+        if (analytics.count > 0) {
+          analytics.average /= analytics.count;
+        }
+
+        break; // Exit the loop since the user has been found
+      }
+    }
+    return analytics;
+  }
 }

@@ -27,20 +27,20 @@
   </ion-grid>
 
   <div class="tutorial__container">
-    <div class="col" *ngFor="let item of filteredTutorial">
+    <ng-container class="col" *ngFor="let item of filteredTutorial">
       <div class="tutorial__content" (click)="setOpen(true, item)">
         <h5>{{item.name}}</h5>
         <div class="img__container">
           <img src="{{item.image}}" alt="{{item.image}}" />
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>{{item.name}}</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="setOpen(false, 'null')">Close</ion-button>
           </ion-buttons>
