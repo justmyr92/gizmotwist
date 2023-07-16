@@ -1,5 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab5',
@@ -7,21 +8,13 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./tab5.page.scss'],
 })
 export class Tab5Page implements OnInit {
-  constructor(private dataService: DataService, private ngZone: NgZone) {}
+  constructor(private dataService: DataService, private router: Router) {}
   username = '';
-  theme = 'Light Mode';
   darkMode: boolean = false;
-  toggleDarkMode(isChecked: boolean) {
-    this.darkMode = isChecked;
-    localStorage.setItem('darkMode', this.darkMode.toString());
-    if (this.darkMode) {
-      document.body.setAttribute('color-theme', 'dark');
-      this.theme = 'Dark Mode';
-    } else {
-      document.body.removeAttribute('color-theme');
-      this.theme = 'Light Mode';
-    }
+  ionViewWillEnter() {
+    this.darkMode = localStorage.getItem('darkMode')?.toString() == 'true';
   }
+
   ngOnInit() {
     let user = localStorage.getItem('userId');
 
@@ -32,7 +25,16 @@ export class Tab5Page implements OnInit {
     }
 
     if (localStorage.getItem('darkMode') == 'true') {
-      this.toggleDarkMode(true);
+      this.dataService.toggleDarkMode(true);
     }
+  }
+
+  toggleDarkMode(isChecked: boolean) {
+    this.dataService.toggleDarkMode(isChecked);
+  }
+
+  logout() {
+    localStorage.removeItem('userId');
+    this.router.navigate(['/login']);
   }
 }

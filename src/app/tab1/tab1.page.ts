@@ -30,6 +30,10 @@ export class Tab1Page {
 
   ngOnInit() {
     this.generateScramble();
+
+    if (localStorage.getItem('darkMode') == 'true') {
+      this.dataService.toggleDarkMode(true);
+    }
   }
 
   resetCube() {

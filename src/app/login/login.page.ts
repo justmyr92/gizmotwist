@@ -22,6 +22,9 @@ export class LoginPage implements OnInit {
     if (localStorage.getItem('userId') != null) {
       this.router.navigate(['/tabs/tab1']);
     }
+    if (localStorage.getItem('darkMode') == 'true') {
+      this.dataService.toggleDarkMode(true);
+    }
   }
 
   login() {

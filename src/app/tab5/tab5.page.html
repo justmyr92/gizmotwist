@@ -10,14 +10,29 @@
     </div>
     <div class="option__container">
       <div class="option__item">
+        <ng-container *ngIf="darkMode">
+          <ion-icon name="moon"></ion-icon>
+        </ng-container>
+        <ng-container *ngIf="!darkMode">
+          <ion-icon name="sunny"></ion-icon>
+        </ng-container>
         <ion-toggle
           #toggle
           (ionChange)="toggleDarkMode(toggle.checked)"
           [checked]="darkMode"
           justify="space-between"
         >
-          Switch to {{theme}}
+          <ng-container *ngIf="darkMode"> Dark mode </ng-container>
+          <ng-container *ngIf="!darkMode"> Light mode </ng-container>
         </ion-toggle>
+      </div>
+      <div class="option__item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <button>About us</button>
+      </div>
+      <div class="option__item">
+        <ion-icon name="log-out"></ion-icon>
+        <button (click)="logout()">Logout</button>
       </div>
     </div>
   </div>

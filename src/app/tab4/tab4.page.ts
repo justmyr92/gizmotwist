@@ -22,7 +22,11 @@ export class Tab4Page implements OnInit {
   solveDates: string[] = [];
   analytics: any = null;
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('darkMode') == 'true') {
+      this.dataService.toggleDarkMode(true);
+    }
+  }
 
   ionViewWillEnter() {
     this.renderChart();

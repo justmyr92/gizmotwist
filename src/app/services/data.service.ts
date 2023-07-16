@@ -183,4 +183,14 @@ export class DataService {
     }
     return analytics;
   }
+  darkMode: boolean = false;
+  toggleDarkMode(isChecked: boolean) {
+    this.darkMode = isChecked;
+    localStorage.setItem('darkMode', this.darkMode.toString());
+    if (this.darkMode) {
+      document.body.setAttribute('color-theme', 'dark');
+    } else {
+      document.body.removeAttribute('color-theme');
+    }
+  }
 }

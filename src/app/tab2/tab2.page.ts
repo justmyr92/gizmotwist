@@ -1,6 +1,7 @@
 /** @format */
 
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-tab2',
@@ -566,10 +567,14 @@ export class Tab2Page {
     },
   ];
 
-  constructor() {
+  constructor(private dataService: DataService) {
     this.getRows();
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('darkMode') == 'true') {
+      this.dataService.toggleDarkMode(true);
+    }
+  }
 
   setTutorial() {
     if (this.tutorial === 'OLL') {
